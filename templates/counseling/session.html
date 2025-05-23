@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}New Counseling Session - eAI Ministry Tool{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>New Counseling Session</h1>
+    <p class="lead">Create and document a pastoral counseling session.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('counseling.new_session') }}">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Session Title</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="topic" class="form-label">Counseling Topic</label>
+                        <select class="form-select" id="topic" name="topic" required>
+                            <option value="">Select a topic...</option>
+                            {% for topic in topics %}
+                                <option value="{{ topic }}">{{ topic }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Situation Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                        <div class="form-text">Briefly describe the counseling situation</div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <button type="button" id="get-advice-btn" class="btn btn-secondary">Get Counseling Advice</button>
+                        </div>
+                    </div>
+                    
+                    <div id="advice-container" class="mb-3 d-none"></div>
+                    
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Session Notes</label>
+                        <textarea class="form-control" id="notes" name="notes" rows="6"></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="scripture_references" class="form-label">Scripture References</label>
+                        <input type="text" class="form-control" id="scripture_references" name="scripture_references">
+                        <div class="form-text">Comma-separated list of relevant scripture passages</div>
+                    </div>
+                    
+                    <div id="scripture-suggestions" class="mb-3"></div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-primary">Save Session</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Counseling Session Tips</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Active Listening:</strong> Focus on understanding, not just responding</li>
+                    <li><strong>Ask Questions:</strong> Use open-ended questions to explore deeper</li>
+                    <li><strong>Scripture:</strong> Ground your counsel in biblical wisdom</li>
+                    <li><strong>Action Steps:</strong> Suggest practical next steps</li>
+                    <li><strong>Follow Up:</strong> Plan when and how to check in next</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">How to Use This Tool</h5>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Enter a title and select the counseling topic</li>
+                    <li>Describe the situation briefly</li>
+                    <li>Click "Get Counseling Advice" for topic-specific guidance</li>
+                    <li>Add your session notes and observations</li>
+                    <li>Select relevant Scripture references from suggestions</li>
+                    <li>Save the session for your records</li>
+                </ol>
+                <div class="alert alert-info mt-3">
+                    <small><i class="fas fa-info-circle me-1"></i> All sessions are confidential and only visible to you.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

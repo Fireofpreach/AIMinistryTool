@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctrine Comparison - eAI Ministry Tool{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Doctrine Comparison</h1>
+    <p class="lead">Compare theological positions between different denominations and traditions.</p>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">About Doctrine Comparison</h5>
+                <p>This module helps you explore and compare theological positions across different Christian denominations. You can select specific doctrinal topics and see how various traditions interpret and teach them.</p>
+                <p>Use this tool to:</p>
+                <ul>
+                    <li>Better understand theological differences between denominations</li>
+                    <li>Prepare for ecumenical discussions or interfaith dialogue</li>
+                    <li>Research positions on specific theological topics</li>
+                    <li>Create educational materials about Christian doctrines</li>
+                </ul>
+                <div class="d-grid gap-2 d-md-flex mt-3">
+                    <a href="{{ url_for('doctrine.compare') }}" class="btn btn-primary me-2">Standard Comparison</a>
+                    <a href="{{ url_for('doctrine.amillennial_comparison') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-anchor me-1"></i> Amillennial Foundation Comparison
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Available Denominations</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% if denominations %}
+                        {% for denomination in denominations %}
+                            <li class="list-group-item">{{ denomination.name }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li class="list-group-item">No denominations available yet</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        
+        {% if current_user.is_authenticated %}
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">My Saved Comparisons</h5>
+                </div>
+                <div class="card-body">
+                    <a href="{{ url_for('doctrine.my_comparisons') }}" class="btn btn-outline-primary">View My Comparisons</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Common Theological Topics</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul>
+                            <li>The Nature of God</li>
+                            <li>The Trinity</li>
+                            <li>Christology</li>
+                            <li>Pneumatology (Holy Spirit)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul>
+                            <li>Soteriology (Salvation)</li>
+                            <li>Eschatology (End Times)</li>
+                            <li>Ecclesiology (The Church)</li>
+                            <li>Sacraments/Ordinances</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul>
+                            <li>Scripture and Authority</li>
+                            <li>Creation and Providence</li>
+                            <li>Anthropology (Human Nature)</li>
+                            <li>Theological Ethics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
