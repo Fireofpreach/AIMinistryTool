@@ -3,9 +3,9 @@ import os
 
 from flask import Flask
 from flask_login import LoginManager
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
+
+from modules.extensions import db  # ✅ NEW LINE
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
