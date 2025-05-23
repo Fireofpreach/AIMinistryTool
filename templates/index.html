@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}eAI Ministry Tool - Home{% endblock %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-md-12 text-center">
+        <h1 class="display-4 mb-4">Welcome to eAI Ministry Tool</h1>
+        <p class="lead mb-4">A comprehensive AI-powered tool for ministry leaders to assist with doctrine comparison, sermon building, pastoral counseling, and theological resources.</p>
+        {% if not current_user.is_authenticated %}
+            <div class="mt-4">
+                <a href="{{ url_for('login') }}" class="btn btn-primary me-2">Login</a>
+                <a href="{{ url_for('register') }}" class="btn btn-outline-primary">Register</a>
+            </div>
+        {% else %}
+            <div class="mt-4">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-md-3 mb-4">
+        <div class="card module-card h-100">
+            <div class="card-body text-center">
+                <div class="module-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h5 class="card-title">Doctrine Comparison</h5>
+                <p class="card-text">Compare theological positions between different denominations and traditions.</p>
+                <a href="{{ url_for('doctrine.index') }}" class="btn btn-outline-primary">Explore</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card module-card h-100">
+            <div class="card-body text-center">
+                <div class="module-icon">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <h5 class="card-title">Sermon Builder</h5>
+                <p class="card-text">Create sermon outlines, find illustrations, and develop content for your preaching.</p>
+                <a href="{{ url_for('sermon.index') }}" class="btn btn-outline-primary">Explore</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card module-card h-100">
+            <div class="card-body text-center">
+                <div class="module-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h5 class="card-title">Counseling</h5>
+                <p class="card-text">Access resources and guidance for pastoral counseling sessions across various topics.</p>
+                <a href="{{ url_for('counseling.index') }}" class="btn btn-outline-primary">Explore</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card module-card h-100">
+            <div class="card-body text-center">
+                <div class="module-icon">
+                    <i class="fas fa-books"></i>
+                </div>
+                <h5 class="card-title">Resource Library</h5>
+                <p class="card-text">Discover books, articles, and other materials to deepen your theological knowledge.</p>
+                <a href="{{ url_for('resources.index') }}" class="btn btn-outline-primary">Explore</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">About eAI Ministry Tool</h5>
+            </div>
+            <div class="card-body">
+                <p>eAI Ministry Tool is designed to support ministry leaders in their daily work. Our AI-powered platform combines theological knowledge with modern technology to provide practical tools for ministry.</p>
+                <p>Whether you're preparing sermons, conducting pastoral counseling, researching theological positions, or looking for ministry resources, eAI Ministry Tool is here to help.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Getting Started</h5>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li><strong>Create an account</strong> or log in to access all features</li>
+                    <li><strong>Explore the modules</strong> to discover the tools available</li>
+                    <li><strong>Build your first sermon</strong> using the Sermon Builder</li>
+                    <li><strong>Compare doctrines</strong> between different denominations</li>
+                    <li><strong>Prepare for counseling</strong> with our Counseling module</li>
+                    <li><strong>Access resources</strong> in our extensive library</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

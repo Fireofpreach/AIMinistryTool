@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}Sermon Builder - eAI Ministry Tool{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Sermon Builder</h1>
+    <p class="lead">Create sermon outlines, find illustrations, and develop content for your preaching.</p>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">About Sermon Builder</h5>
+                <p>This module helps you prepare and organize your sermons with AI-powered assistance. You can create sermon outlines, find relevant illustrations, and develop content based on scripture passages.</p>
+                <p>Use this tool to:</p>
+                <ul>
+                    <li>Generate sermon outlines from scripture passages</li>
+                    <li>Find illustrations that connect with your congregation</li>
+                    <li>Organize your sermon content effectively</li>
+                    <li>Save and manage your sermon library</li>
+                </ul>
+                <div class="mt-4">
+                    <a href="{{ url_for('sermon.build') }}" class="btn btn-primary me-2">Build New Sermon</a>
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('sermon.my_sermons') }}" class="btn btn-outline-primary">My Sermons</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Effective Sermon Structure</h5>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li><strong>Introduction</strong> - Engage the audience and introduce the topic</li>
+                    <li><strong>Scripture Reading</strong> - Present the biblical text</li>
+                    <li><strong>Main Points</strong> - Develop 3-4 key points from the text</li>
+                    <li><strong>Illustrations</strong> - Use stories and examples to clarify</li>
+                    <li><strong>Application</strong> - Connect the message to daily life</li>
+                    <li><strong>Conclusion</strong> - Summarize and provide a call to action</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="mb-0">Tips for Preparation</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Start with prayer and biblical text</li>
+                    <li>Focus on a single central idea</li>
+                    <li>Use clear, accessible language</li>
+                    <li>Include practical applications</li>
+                    <li>Prepare more material than you'll need</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if not current_user.is_authenticated %}
+<div class="alert alert-info">
+    <i class="fas fa-info-circle me-2"></i> <strong>Note:</strong> You need to <a href="{{ url_for('login') }}">log in</a> to build and save sermons.
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Recent Sermon Topics</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Faith and Spiritual Growth</h6>
+                        <ul>
+                            <li>Walking by Faith</li>
+                            <li>Spiritual Disciplines</li>
+                            <li>Overcoming Doubt</li>
+                            <li>Developing a Prayer Life</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Christian Living</h6>
+                        <ul>
+                            <li>Loving Your Neighbor</li>
+                            <li>Stewardship and Generosity</li>
+                            <li>Family Relationships</li>
+                            <li>Work and Vocation</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Biblical Teaching</h6>
+                        <ul>
+                            <li>The Parables of Jesus</li>
+                            <li>Old Testament Heroes</li>
+                            <li>The Letters of Paul</li>
+                            <li>Psalms and Wisdom Literature</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

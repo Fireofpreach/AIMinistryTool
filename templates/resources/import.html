@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Import Resources - eAI Ministry Tool{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Import External Resources</h1>
+    <p class="lead">Import theological resources from e-Sword, Logos, and amillennial authors.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Import Settings</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('resources.import_resources') }}">
+                    <div class="mb-3">
+                        <label class="form-label">Source</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="source-all" value="all" checked>
+                            <label class="form-check-label" for="source-all">
+                                All Sources
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="source-esword" value="esword">
+                            <label class="form-check-label" for="source-esword">
+                                e-Sword Compatible Resources
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="source-logos" value="logos">
+                            <label class="form-check-label" for="source-logos">
+                                Logos Bible Software Resources
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="source" id="source-amillennial" value="amillennial">
+                            <label class="form-check-label" for="source-amillennial">
+                                Amillennial Authors Only
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="resource_type" class="form-label">Filter by Resource Type (Optional)</label>
+                        <select class="form-select" id="resource_type" name="resource_type">
+                            <option value="">All Types</option>
+                            {% for type in resource_types %}
+                                <option value="{{ type }}">{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="topic" class="form-label">Filter by Topic (Optional)</label>
+                        <select class="form-select" id="topic" name="topic">
+                            <option value="">All Topics</option>
+                            {% for topic in topics %}
+                                <option value="{{ topic }}">{{ topic }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-download me-2"></i>Import Resources
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">About External Resources</h5>
+            </div>
+            <div class="card-body">
+                <p>This tool allows you to import theological resources from multiple sources:</p>
+                
+                <h6 class="mt-3">e-Sword Resources</h6>
+                <p>Free resources compatible with e-Sword Bible software, including commentaries, dictionaries, and reference works.</p>
+                
+                <h6 class="mt-3">Logos Resources</h6>
+                <p>Free resources available in Logos Bible Software format, including reference works and study materials.</p>
+                
+                <h6 class="mt-3">Amillennial Authors</h6>
+                <p>A curated collection of free resources from notable amillennial theologians and authors.</p>
+                
+                <div class="alert alert-info mt-3">
+                    <small><i class="fas fa-info-circle me-1"></i> All imported resources are freely available materials that don't require additional licensing.</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Featured Amillennial Authors</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><strong>Anthony Hoekema</strong> - Reformed theologian and author of "The Bible and the Future"</li>
+                    <li class="mb-2"><strong>Kim Riddlebarger</strong> - Author of "A Case for Amillennialism" and other works</li>
+                    <li class="mb-2"><strong>Sam Storms</strong> - Author of "Kingdom Come: The Amillennial Alternative"</li>
+                    <li class="mb-2"><strong>G.K. Beale</strong> - New Testament scholar with a focus on eschatology</li>
+                    <li><strong>William Hendriksen</strong> - New Testament commentator with an amillennial perspective</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
