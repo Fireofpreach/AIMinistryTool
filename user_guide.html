@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% block title %}User Guide - eAI Ministry Tool{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sticky-top pt-3" style="top: 2rem;">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Table of Contents</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="list-group list-group-flush">
+                            <a href="#introduction" class="list-group-item list-group-item-action">Introduction</a>
+                            <a href="#getting-started" class="list-group-item list-group-item-action">Getting Started</a>
+                            <a href="#doctrine-comparison" class="list-group-item list-group-item-action">Doctrine Comparison</a>
+                            <a href="#sermon-preparation" class="list-group-item list-group-item-action">Sermon Preparation</a>
+                            <a href="#counseling" class="list-group-item list-group-item-action">Counseling</a>
+                            <a href="#resources" class="list-group-item list-group-item-action">Resource Library</a>
+                            <a href="#apologetics" class="list-group-item list-group-item-action">Apologetics</a>
+                            <a href="#amillennial-focus" class="list-group-item list-group-item-action">Amillennial Focus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card mb-4">
+                <div class="card-header bg-dark text-white">
+                    <h1 class="h2 mb-0">eAI Ministry Tool User Guide</h1>
+                </div>
+                <div class="card-body">
+                    <section id="introduction" class="mb-5">
+                        <h2>Introduction</h2>
+                        <p class="lead">Welcome to the eAI Ministry Tool, a comprehensive platform designed to assist ministry leaders and theological researchers.</p>
+                        
+                        <p>This tool integrates several powerful modules to support your ministry work:</p>
+                        <ul>
+                            <li><strong>Doctrine Comparison:</strong> Compare theological positions across denominations</li>
+                            <li><strong>Sermon Preparation:</strong> Create, organize, and enhance sermon content</li>
+                            <li><strong>Pastoral Counseling:</strong> Manage counseling sessions with scriptural insights</li>
+                            <li><strong>Resource Library:</strong> Access and manage theological resources</li>
+                            <li><strong>Apologetics:</strong> Respond to objections and prepare for theological discussions</li>
+                        </ul>
+                        
+                        <p>The platform is built with a particular focus on amillennial theology as a foundational perspective for comparing other theological viewpoints.</p>
+                    </section>
+                    
+                    <section id="getting-started" class="mb-5">
+                        <h2>Getting Started</h2>
+                        
+                        <h4>Account Creation and Login</h4>
+                        <ol>
+                            <li>Visit the homepage and click "Register" to create a new account</li>
+                            <li>Fill in your username, email, and password</li>
+                            <li>Once registered, log in using your credentials</li>
+                            <li>After logging in, you'll be directed to your personalized dashboard</li>
+                        </ol>
+                        
+                        <h4>Dashboard Overview</h4>
+                        <p>Your dashboard provides quick access to all modules and displays recent activity. From here you can:</p>
+                        <ul>
+                            <li>Access any of the five main modules</li>
+                            <li>View recent sermons, comparisons, or resources you've created</li>
+                            <li>See important notifications or system updates</li>
+                            <li>Access your profile settings</li>
+                        </ul>
+                        
+                        <div class="alert alert-info">
+                            <strong>Tip:</strong> Customize your profile to enhance your experience. Add denomination preferences to see more relevant content.
+                        </div>
+                    </section>
+                    
+                    <section id="doctrine-comparison" class="mb-5">
+                        <h2>Doctrine Comparison Module</h2>
+                        
+                        <p>The Doctrine Comparison module allows you to compare theological positions across different denominations.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Standard Comparison:</strong> Compare any denominations side by side</li>
+                            <li><strong>Amillennial Foundation Comparison:</strong> Compare other theological perspectives against amillennial theology</li>
+                            <li><strong>Save Comparisons:</strong> Store comparison results for future reference</li>
+                            <li><strong>Topic Selection:</strong> Choose specific theological topics to compare</li>
+                        </ul>
+                        
+                        <h4>How to Use:</h4>
+                        <ol>
+                            <li>Navigate to the Doctrine module from your dashboard</li>
+                            <li>Choose either "Standard Comparison" or "Amillennial Foundation Comparison"</li>
+                            <li>Select the denominations you wish to compare</li>
+                            <li>Select the theological topics of interest</li>
+                            <li>View the side-by-side comparison results</li>
+                            <li>Optionally save the comparison for future reference</li>
+                        </ol>
+                        
+                        <div class="alert alert-warning">
+                            <strong>Note:</strong> The Amillennial Foundation Comparison automatically includes amillennial theology as the baseline for comparison.
+                        </div>
+                    </section>
+                    
+                    <section id="sermon-preparation" class="mb-5">
+                        <h2>Sermon Preparation Tools</h2>
+                        
+                        <p>The Sermon module provides comprehensive tools for creating, organizing, and enhancing sermon content.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Sermon Builder:</strong> Create individual sermons with structured content</li>
+                            <li><strong>Series Planner:</strong> Organize multiple sermons into cohesive series</li>
+                            <li><strong>Outline Generator:</strong> Get suggested outlines based on scripture passages</li>
+                            <li><strong>Illustration Finder:</strong> Discover relevant illustrations for your sermons</li>
+                        </ul>
+                        
+                        <h4>Creating a Sermon:</h4>
+                        <ol>
+                            <li>Navigate to the Sermon module and select "Build Sermon"</li>
+                            <li>Enter the sermon title, scripture passage, and theme</li>
+                            <li>Use the "Generate Outline" button to get a suggested structure</li>
+                            <li>Customize the outline points as needed</li>
+                            <li>Add illustrations using the "Find Illustrations" feature</li>
+                            <li>Enter your sermon content in the main editor</li>
+                            <li>Save your sermon when complete</li>
+                        </ol>
+                        
+                        <h4>Planning a Sermon Series:</h4>
+                        <ol>
+                            <li>Select "Sermon Series" from the Sermon module</li>
+                            <li>Click "Create New Series"</li>
+                            <li>Enter the series title, description, theme, and date range</li>
+                            <li>Save the series</li>
+                            <li>Add existing sermons to the series or create new ones</li>
+                            <li>Arrange sermons in the desired order within the series</li>
+                        </ol>
+                        
+                        <div class="alert alert-info">
+                            <strong>Tip:</strong> When creating a series, consider using a consistent theme or scripture book to maintain cohesion.
+                        </div>
+                    </section>
+                    
+                    <section id="counseling" class="mb-5">
+                        <h2>Pastoral Counseling Module</h2>
+                        
+                        <p>The Counseling module helps organize pastoral counseling sessions and provides scriptural guidance for various counseling situations.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Session Management:</strong> Create and track counseling sessions</li>
+                            <li><strong>Scripture Suggestions:</strong> Get relevant scripture passages for specific topics</li>
+                            <li><strong>Counseling Advice:</strong> Access guidance for common pastoral situations</li>
+                        </ul>
+                        
+                        <h4>Creating a Counseling Session:</h4>
+                        <ol>
+                            <li>Navigate to the Counseling module and select "New Session"</li>
+                            <li>Enter the session title, description, and topic</li>
+                            <li>Use the "Suggest Scriptures" feature to find relevant passages</li>
+                            <li>Record session notes and action items</li>
+                            <li>Save the session for future reference</li>
+                        </ol>
+                        
+                        <div class="alert alert-warning">
+                            <strong>Important:</strong> All counseling sessions are private and only accessible to you. Ensure confidentiality is maintained.
+                        </div>
+                    </section>
+                    
+                    <section id="resources" class="mb-5">
+                        <h2>Resource Library</h2>
+                        
+                        <p>The Resource Library provides access to theological materials from various sources, with a special emphasis on amillennial authors.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Resource Browser:</strong> Search and filter theological resources</li>
+                            <li><strong>Import Tool:</strong> Access materials from e-Sword, Logos, and other sources</li>
+                            <li><strong>Amillennial Collection:</strong> Special focus on amillennial authors and resources</li>
+                            <li><strong>Personal Contributions:</strong> Add your own resources to the library</li>
+                        </ul>
+                        
+                        <h4>Accessing Resources:</h4>
+                        <ol>
+                            <li>Navigate to the Resources module</li>
+                            <li>Browse the library or use search/filter options</li>
+                            <li>Click on a resource to view its details</li>
+                            <li>Read content excerpts or follow links to external resources</li>
+                        </ol>
+                        
+                        <h4>Importing External Resources:</h4>
+                        <ol>
+                            <li>Select "Import from e-Sword/Logos" in the Resources module</li>
+                            <li>Choose the external source (e-Sword, Logos, Amillennial authors)</li>
+                            <li>Select the resource type and topics of interest</li>
+                            <li>Review the available resources and select ones to import</li>
+                            <li>Complete the import process</li>
+                        </ol>
+                        
+                        <div class="alert alert-info">
+                            <strong>Tip:</strong> Filter resources by "is_amillennial" to focus on materials from amillennial authors.
+                        </div>
+                    </section>
+                    
+                    <section id="apologetics" class="mb-5">
+                        <h2>Apologetics Module</h2>
+                        
+                        <p>The Apologetics module helps you engage with common objections to amillennialism and prepare for theological discussions.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Objection Database:</strong> Common objections to amillennial theology</li>
+                            <li><strong>Response Generator:</strong> Get suggested responses to objections</li>
+                            <li><strong>Theological Authors:</strong> Access insights from key amillennial writers</li>
+                            <li><strong>Debate Preparation:</strong> Tools for preparing for theological discussions</li>
+                        </ul>
+                        
+                        <h4>Responding to Objections:</h4>
+                        <ol>
+                            <li>Navigate to the Apologetics module</li>
+                            <li>Browse objections by category or search for specific topics</li>
+                            <li>Select an objection to view details</li>
+                            <li>Read existing responses or generate a new response</li>
+                            <li>Add your own responses if desired</li>
+                        </ol>
+                        
+                        <h4>Preparing for Debates:</h4>
+                        <ol>
+                            <li>Select "Debate Preparation" in the Apologetics module</li>
+                            <li>Choose a theological category to focus on</li>
+                            <li>Review common objections and suggested responses</li>
+                            <li>Access key scriptures and talking points</li>
+                            <li>Generate additional responses as needed</li>
+                        </ol>
+                        
+                        <div class="alert alert-warning">
+                            <strong>Remember:</strong> The goal is to present amillennial theology clearly and respectfully, not to "win" debates.
+                        </div>
+                    </section>
+                    
+                    <section id="amillennial-focus" class="mb-5">
+                        <h2>Amillennial Theological Focus</h2>
+                        
+                        <p>The eAI Ministry Tool uses amillennialism as a foundational theological perspective throughout its various modules.</p>
+                        
+                        <h4>Key Amillennial Resources:</h4>
+                        <ul>
+                            <li><strong>Historical Authors:</strong> Augustine, Martin Luther, John Calvin</li>
+                            <li><strong>Modern Authors:</strong> Geerhardus Vos, Anthony Hoekema, Sam Storms, Kim Riddlebarger</li>
+                            <li><strong>Key Texts:</strong> "The Bible and the Future" (Hoekema), "Kingdom Come" (Storms)</li>
+                        </ul>
+                        
+                        <h4>Amillennial Distinctives:</h4>
+                        <p>The following core beliefs of amillennialism are emphasized throughout the platform:</p>
+                        <ul>
+                            <li>The millennium in Revelation 20 is symbolic of Christ's current reign</li>
+                            <li>The Church is the spiritual fulfillment of Israel's promises</li>
+                            <li>The Kingdom of God is "already but not yet" fully realized</li>
+                            <li>A single general resurrection will occur at Christ's return</li>
+                            <li>Old Testament prophecies are often fulfilled spiritually in Christ and the Church</li>
+                        </ul>
+                        
+                        <div class="alert alert-info">
+                            <strong>Note:</strong> While amillennialism is the foundational perspective, the tool respects and accurately represents other theological viewpoints.
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
