@@ -5,18 +5,10 @@ from flask import Flask
 from flask_login import LoginManager
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-from modules.extensions import db  # ✅ NEW LINE
+from modules.extensions import db  # Your custom SQLAlchemy with Base
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
-
-
-class Base(DeclarativeBase):
-    pass
-
-
-# Initialize SQLAlchemy with custom base
-db = SQLAlchemy(model_class=Base)
 
 # Create the app
 app = Flask(__name__)
@@ -55,9 +47,10 @@ app.register_blueprint(resources_bp, url_prefix='/resources')
 with app.app_context():
     # Import models
     import models  # noqa: F401
-    
+
     db.create_all()
     logging.info("Database tables created successfully")
 
 # Import routes
 from routes import *  # noqa: F401, E402
+
