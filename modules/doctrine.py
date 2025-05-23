@@ -2,10 +2,9 @@ import json
 from flask import Blueprint, render_template, request, jsonify, flash, redirect, url_for
 from flask_login import login_required, current_user
 
-from app import db
-from models import Denomination, Belief, DoctrineComparison
+from modules.extensions import db  # import db from extensions, NOT from app.py
+from flask import Blueprint
 
-# Create blueprint
 doctrine_bp = Blueprint('doctrine', __name__)
 
 
