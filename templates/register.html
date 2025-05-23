@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Register - EAI Ministry Tool</title>
+</head>
+<body>
+    <h1>Register</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li style="color: {% if category == 'danger' %}red{% elif category == 'warning' %}orange{% elif category == 'success' %}green{% else %}black{% endif %};">
+              {{ message }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('auth.register') }}">
+        <label>Username: <input type="text" name="username" required></label><br />
+        <label>Email: <input type="email" name="email" required></label><br />
+        <label>First Name: <input type="text" name="first_name"></label><br />
+        <label>Last Name: <input type="text" name="last_name"></label><br />
+        <label>Password: <input type="password" name="password" required></label><br />
+        <label>Confirm Password: <input type="password" name="password2" required></label><br />
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('auth.login') }}">Log in here</a>.</p>
+</body>
+</html>
