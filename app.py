@@ -44,6 +44,7 @@ def create_app():
     from modules.sermon import sermon_bp
     from modules.counseling import counseling_bp
     from modules.resources import resources_bp
+    from modules.auth.routes import auth_bp 
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(doctrine_bp, url_prefix='/doctrine')
